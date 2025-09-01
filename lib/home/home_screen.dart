@@ -74,7 +74,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             SizedBox(height: 10),
-            SizedBox(height: 500, child: buildStory(context)),
+            // SizedBox(height: 500, child: buildStory(context)),
             SizedBox(
               height: 100, // thoda height bada liya
               child: ListView.separated(
