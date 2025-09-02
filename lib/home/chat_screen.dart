@@ -48,8 +48,8 @@ class _ChatScreenState extends State<ChatScreen> {
         ),
 
         actions: [
-          IconButton(onPressed: () {}, icon: Icon(Icons.call)),
-          IconButton(onPressed: () {}, icon: Icon(Icons.video_camera_back)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.call,color: Colors.blue,)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.video_camera_back, color: Colors.blue,)),
         ],
       ),
 

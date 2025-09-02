@@ -3,6 +3,7 @@ import 'dart:io';
 import 'package:facebook/home/chat_screen.dart';
 import 'package:facebook/models/chat_user_model.dart';
 import 'package:facebook/models/user_status_model.dart';
+import 'package:facebook/profile/profle_screen.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_story_view/models/story_item.dart';
@@ -47,19 +48,20 @@ class _HomeScreenState extends State<HomeScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        leading: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: CircleAvatar(
-            radius: 35,
-            backgroundImage: AssetImage("assets/Oval.png"),
-          ),
+        leading: IconButton(
+          onPressed: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => ProfleScreen()),
+            );
+          },
+          icon: CircleAvatar(backgroundImage: AssetImage("assets/Oval.png")),
         ),
-
-        title: Text("Chats", style: TextStyle(fontSize: 30)),
+        title: Text("Chate"),
 
         actions: [
-          IconButton(icon: Icon(Icons.camera_alt), onPressed: () {}),
-          IconButton(icon: Icon(Icons.edit_document), onPressed: () {}),
+          IconButton(onPressed: () {}, icon: Icon(Icons.camera_alt)),
+          IconButton(onPressed: () {}, icon: Icon(Icons.edit_document)),
         ],
       ),
       body: Padding(
@@ -68,7 +70,9 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [
             TextField(
               decoration: InputDecoration(
-                border: OutlineInputBorder(),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
                 prefixIcon: Icon(Icons.search),
                 hint: Text("Search", style: TextStyle(fontSize: 18)),
               ),
